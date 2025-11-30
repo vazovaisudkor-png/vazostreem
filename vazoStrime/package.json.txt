@@ -1,0 +1,11 @@
+{
+  "name": "video-streaming-site",
+  "version": "1.0.0",
+  "description": "Copyright-free video streaming site",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "serve": "firebase serve"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

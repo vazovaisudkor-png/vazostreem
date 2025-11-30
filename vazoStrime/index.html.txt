@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxing Music & Nature Videos - 100% Copyright Free</title>
+    <meta name="description" content="Free relaxing music with nature videos. 100% copyright free content for meditation and relaxation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-container" id="loadingContainer">
+        <div class="loader"></div>
+        <h2>Loading Your Relaxing Experience...</h2>
+        <p id="statusText">Initializing video players</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>🌿 Relaxing Nature Music</h1>
+        <p>100% Copyright Free Content • Safe & Legal Streaming</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Warning Box -->
+        <div class="info-section warning-box">
+            <h3>⚠️ Legal Notice</h3>
+            <p>This site uses only copyright-free content. All videos and music are legally sourced from Pexels, Pixabay, and other royalty-free platforms.</p>
+        </div>
+
+        <!-- Video Player -->
+        <div class="video-container">
+            <iframe 
+                class="main-player"
+                id="mainPlayer"
+                src=""
+                frameborder="0"
+                allowfullscreen
+                allow="autoplay; encrypted-media"
+                title="Main Relaxing Video Player">
+            </iframe>
+        </div>
+
+        <!-- Hidden Ghost Players -->
+        <div class="hidden-frames">
+            <iframe id="ghost1" title="Hidden Player 1"></iframe>
+            <iframe id="ghost2" title="Hidden Player 2"></iframe>
+            <iframe id="ghost3" title="Hidden Player 3"></iframe>
+        </div>
+
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>🎯 How This Works</h2>
+            <p>• <strong>1 Visible Player</strong> - Main video that users watch</p>
+            <p>• <strong>3 Hidden Players</strong> - Running simultaneously in background</p>
+            <p>• <strong>4x Views</strong> - Each visitor generates views on multiple platforms</p>
+            <p>• <strong>100% Automated</strong> - Works automatically after page load</p>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="info-section">
+            <h2>📊 Platform Information</h2>
+            <p>• Streamhide.com - Main Player</p>
+            <p>• Wolfstream.tv - Hidden Player 1</p>
+            <p>• Vidoza.net - Hidden Player 2</p>
+            <p>• Mixdrop.co - Hidden Player 3</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="info-section" style="text-align: center; margin-top: 40px;">
+        <p>&copy; 2025 Relaxing Nature Music. All Rights Reserved.</p>
+        <p>This website complies with all copyright laws and uses only royalty-free content.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+// Video Configuration - REPLACE THESE IDs
+const VIDEO_CONFIG = {
+    hosts: {
+        streamhide: 'YOUR_STREAMHIDE_VIDEO_ID',
+        wolfstream: 'YOUR_WOLFSTREAM_VIDEO_ID',
+        vidoza: 'YOUR_VIDOZA_VIDEO_ID',
+        mixdrop: 'YOUR_MIXDROP_VIDEO_ID'
+    },
+    settings: {
+        autoplay: true,
+        mute: true,
+        loop: true,
+        loadingDelay: 3000
+    }
+};
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Video Site Initialized');
+    initializeVideoPlayers();
+});
+
+function initializeVideoPlayers() {
+    const loadingElement = document.getElementById('loadingContainer');
+    const statusElement = document.getElementById('statusText');
+    
+    // Show loading status
+    if (statusElement) {
+        statusElement.textContent = 'Setting up video players...';
+    }
+    
+    setTimeout(() => {
+        try {
+            setupMainPlayer();
+            setupGhostPlayers();
+            
+            // Hide loading screen
+            if (loadingElement) {
+                loadingElement.style.display = 'none';
+            }
+            
+            // Update status
+            if (statusElement) {
+                statusElement.textContent = 'All videos running successfully! 🎉';
+                statusElement.style.color = '#4CAF50';
+            }
+            
+            console.log('All video players initialized successfully');
+            
+        } catch (error) {
+            console.error('Error initializing videos:', error);
+            if (statusElement) {
+                statusElement.textContent = 'Error loading videos. Please refresh.';
+                statusElement.style.color = '#ff6b6b';
+            }
+        }
+    }, VIDEO_CONFIG.settings.loadingDelay);
+}
+
+function setupMainPlayer() {
+    const mainPlayer = document.getElementById('mainPlayer');
+    if (mainPlayer && VIDEO_CONFIG.hosts.streamhide) {
+        mainPlayer.src = `https://streamhide.com/e/${VIDEO_CONFIG.hosts.streamhide}?autoplay=1&mute=0`;
+        console.log('Main player setup complete');
+    }
+}
+
+function setupGhostPlayers() {
+    const ghost1 = document.getElementById('ghost1');
+    const ghost2 = document.getElementById('ghost2');
+    const ghost3 = document.getElementById('ghost3');
+    
+    if (ghost1 && VIDEO_CONFIG.hosts.wolfstream) {
+        ghost1.src = `https://wolfstream.tv/e/${VIDEO_CONFIG.hosts.wolfstream}?autoplay=1&mute=1`;
+    }
+    
+    if (ghost2 && VIDEO_CONFIG.hosts.vidoza) {
+        ghost2.src = `https://vidoza.net/e/${VIDEO_CONFIG.hosts.vidoza}?autoplay=1&mute=1`;
+    }
+    
+    if (ghost3 && VIDEO_CONFIG.hosts.mixdrop) {
+        ghost3.src = `https://mixdrop.co/e/${VIDEO_CONFIG.hosts.mixdrop}?autoplay=1&mute=1`;
+    }
+    
+    console.log('Ghost players setup complete');
+}
+
+// Error handling for iframes
+window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
+});

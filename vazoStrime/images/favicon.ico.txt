@@ -1,0 +1,6 @@
+:: Create a simple favicon
+echo Placeholder for favicon > images\favicon.ico
+
+:: Create placeholder images
+echo Logo image > images\logo.png
+echo Thumbnail image > images\thumbnail.jpg
